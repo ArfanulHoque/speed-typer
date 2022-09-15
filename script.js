@@ -49,7 +49,12 @@ const typeController = (e) => {
   } else {
     display.innerHTML += `<span class="red">${
       newLetter === " " ? "▪" : newLetter
-    }</span>`;
+    }
+    </span>`;
+    errorCount++;
+    window.onkeydown = function (e) {
+      return !(e.keyCode == 32);
+    };
   }
 
   // check if given question text is equal to user typed text
